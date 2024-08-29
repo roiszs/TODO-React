@@ -1,9 +1,7 @@
-
-
-function Todotitulo() {
+function Todotitulo({total, completed}) {
     return (
       <h1>
-        Has completado 3 de 5 TODOS
+        Has completado {total} de {completed} TODOS
       </h1>
     );
   }
