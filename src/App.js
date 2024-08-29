@@ -4,7 +4,7 @@ import { TodoList } from './TodoList';
 import { ButtonCreate } from './ButtonCreate';
 import { TodoItem } from './TodoItem';
 import React from 'react';
-import './App.css';
+
 
 const defaultTodos = [
   {text: 'Cortar cabello', completed: 'false'},
@@ -15,7 +15,7 @@ const defaultTodos = [
 
 function App() {
   return (
-    <React.Fragment>
+    <>
 
       <Todotitulo completed={4} total={9}/>
       <TodoSearch />
@@ -32,7 +32,7 @@ function App() {
       </TodoList>
 
       <ButtonCreate />
-      </React.Fragment>
+      </>
   );
 }
 

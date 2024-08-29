@@ -1,3 +1,5 @@
+import './Todotitulo.css';
+
 function Todotitulo({total, completed}) {
     return (
       <h1>
