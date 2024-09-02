@@ -1,0 +1,25 @@
+.Boton {
+background-color: aqua;
+box-shadow: 0px 5px 25px rgb(97, 218, 250, 0.5);
+border: none;
+border-radius: 50%;
+cursor: pointer;
+font-size: 50px;
+position: fixed; /* Fija un elemento en una posición específica en la pantalla, independientemente del desplazamiento (scroll) */
+bottom: 24px;
+right: 24px;
+font-weight: bold;
+color: white;
+display: flex; /* organizar elementos de manera flexible y dinámica dentro de un contenedor. */
+justify-content: center;
+align-items: center;
+height: 64px;
+width: 64px;
+
+transform: rotate(0);
+transition: .3s ease;
+}
+
+.Boton:hover {
+    transform: rotate(224deg);
+}
