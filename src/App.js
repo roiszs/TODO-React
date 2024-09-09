@@ -7,10 +7,10 @@ import React from 'react';
 
 
 const defaultTodos = [
-  {text: 'Cortar cabello', completed: 'false'},
-  {text: 'Terminar los cursos', completed: 'false'},
-  {text: 'Sacar RFC', completed: 'true'},
-  {text: 'VENDR CAMIONETA', completed: 'false'},
+  {text: 'Cortar cabello', completed: false},
+  {text: 'Terminar los cursos', completed: false},
+  {text: 'Sacar RFC', completed: true},
+  {text: 'VENDR CAMIONETA', completed: false},
 ];
 
 function App() {
