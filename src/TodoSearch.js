@@ -5,6 +5,8 @@ function TodoSearch() {
 
   const [searchValue, setSearchValue] = React.useState('');
 
+  console.log('Los usuarios escribieron lo siguiente: ' + searchValue);
+
 
     return (
      <input className="todo-search
