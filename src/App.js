@@ -15,11 +15,21 @@ const defaultTodos = [
 
 function App() {
 
+
   const [todos, setTodos] = React.useState(defaultTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
+
+  //Estado para el titulo de la parte de arriba, cuantos completados
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length
+
+  //Estado para el filtro que utilizamos en el search
+  const searchedTodos = todos.filter((todo) => {
+    const todoText = todo.text.toLowerCase();
+    const searchText = searchValue.toLocaleLowerCase();
+    return todoText.includes(searchValue);
+  })
 
   console.log('Los usuarios escribieron lo siguiente: ' + searchValue);
 
@@ -34,7 +44,7 @@ function App() {
       />
 
       <TodoList>
-          {defaultTodos.map(todo => (
+          {searchedTodos.map(todo => (
             <TodoItem 
             key={todo.text}  // a cada valor le debemos dar una llave diferente, en este caso es el texto como tal ya que es diferente en cada item
             text = {todo.text} //le decimos que el text en item va a ser igual a todo.text del array
