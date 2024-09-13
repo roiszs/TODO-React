@@ -3,7 +3,7 @@ import './Todotitulo.css';
 function Todotitulo({total, completed}) {
     return (
       <h1 className='titulo'>
-        Has completado <span> {total} </span> de <span>{completed}</span> TODOS
+        Has completado <span> {completed} </span> de <span>{total}</span> TODOS
       </h1>
     );
   }
