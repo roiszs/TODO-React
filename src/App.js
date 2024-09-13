@@ -14,11 +14,20 @@ const defaultTodos = [
 ];
 
 function App() {
+
+  const [searchValue, setSearchValue] = React.useState('');
+
+  console.log('Los usuarios escribieron lo siguiente: ' + searchValue);
+
   return (
     <>
 
       <Todotitulo completed={4} total={9}/>
-      <TodoSearch />
+      <TodoSearch 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      
+      />
 
       <TodoList>
           {defaultTodos.map(todo => (
