@@ -29,7 +29,7 @@ function App() {
     const todoText = todo.text.toLowerCase();
     const searchText = searchValue.toLocaleLowerCase();
     return todoText.includes(searchValue);
-  })
+  });
 
   console.log('Los usuarios escribieron lo siguiente: ' + searchValue);
 
