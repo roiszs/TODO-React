@@ -31,9 +31,12 @@ function App() {
     return todoText.includes(searchValue);
   });
 
- const completeTodo = () => {
+  //Logica para marcar como completado el TODO.
+ const completeTodo = (text) => {
     const newTodos = [...todos];
-
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text == text
+    );
     newTodos[todoIndex]. completed = true;
     setTodos (newTodos);
  }
@@ -54,7 +57,7 @@ function App() {
             key={todo.text}  // a cada valor le debemos dar una llave diferente, en este caso es el texto como tal ya que es diferente en cada item
             text = {todo.text} //le decimos que el text en item va a ser igual a todo.text del array
             completed={todo.completed} // le damos el valor dentro del nuevo array sí está completado o no
-            onComplete={completeTodo}
+            onComplete={() => completeTodo(todo.text)}
             /> 
         
           ))}
