@@ -3,10 +3,11 @@ import {TodoIcon } from './Todo.Icon.js';
 
 
 
-function CompleteIconIcon () {
+
+function CompleteIcon () {
     return (
         <TodoIcon type='check' color='gray' />
     );
 }
 
-export { CompleteIconIcon };
+export { CompleteIcon };
