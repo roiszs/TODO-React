@@ -1,7 +1,12 @@
 import React from 'react';
+import {TodoIcon } from './Todo.Icon.js';
+
+
 
 function CompleteIconIcon () {
-    return 'V';
+    return (
+        <TodoIcon type='check' color='gray' />
+    );
 }
 
 export { CompleteIconIcon };
