@@ -41,6 +41,16 @@ function App() {
     setTodos (newTodos);
  }
 
+ //Logica para eliminar un TODO.
+ const deleteTodo = (text) => {
+  const newTodos = [...todos];
+  const todoIndex = newTodos.findIndex(
+    (todo) => todo.text == text
+  );
+  newTodos.splice(todoIndex, 1);
+  setTodos (newTodos);
+}
+
   return (
     <>
 
@@ -58,6 +68,7 @@ function App() {
             text = {todo.text} //le decimos que el text en item va a ser igual a todo.text del array
             completed={todo.completed} // le damos el valor dentro del nuevo array sí está completado o no
             onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
             /> 
         
           ))}
