@@ -17,7 +17,7 @@ function App() {
     localStorage.setItem('TODOS_V1', JSON.stringify([]));
     parsedTodos = [];
   } else {
-
+    parsedTodos = JSON.parse(localStorageTodos);
   }
 
 
@@ -37,13 +37,20 @@ function App() {
   });
 
   //Logica para marcar como completado el TODO.
+
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos));
+    setTodos(newTodos);
+  };
+
+
  const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text == text
     );
     newTodos[todoIndex].completed = true;
-    setTodos (newTodos);
+    saveTodos (newTodos);
  }
 
  //Logica para eliminar un TODO.
@@ -53,7 +60,7 @@ function App() {
     (todo) => todo.text == text
   );
   newTodos.splice(todoIndex, 1);
-  setTodos (newTodos);
+  saveTodos (newTodos);
 }
 
   return (
