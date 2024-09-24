@@ -6,17 +6,22 @@ import { TodoItem } from './TodoItem';
 import React from 'react';
 
 
-const defaultTodos = [
-  {text: 'Cortar cabello', completed: false},
-  {text: 'Terminar los cursos', completed: false},
-  {text: 'Sacar RFC', completed: true},
-  {text: 'VENDR CAMIONETA', completed: false},
-];
+
 
 function App() {
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
 
 
-  const [todos, setTodos] = React.useState(defaultTodos);
+  if (!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+
+  }
+
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
 
